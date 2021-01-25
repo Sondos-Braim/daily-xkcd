@@ -1,18 +1,23 @@
-import styles from '../styles.module.css'
+// import styles from '../styles.module.css'
 import Link from 'next/link'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 function Header(props){
     return(
-        <header className={styles.header}>
-            <nav>
-                <Link href='/'>
-                    <a className={styles.a}>Home</a>
-                </Link>
-                <Link href='/about'>
-                    <a className={styles.a}>About</a>
-                </Link>
-            </nav>
-        </header>
+
+  
+        <Navbar bg="dark" variant="dark">
+            <Nav className="mr-auto">
+            <Nav.Link href="/">Home</Nav.Link>
+            <Nav.Link href="/about">about</Nav.Link>
+  
+            </Nav>
+        </Navbar>
+
+
     )
 }
 
