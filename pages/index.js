@@ -7,9 +7,9 @@ export default function Home(props) {
         <MyLayout>
           <div className={styles.Home}>
             <p> XKCD </p>
-            <p>{props.comics.safe_title}</p>
-            <img src={props.comics.img}/>
-            <Footer comics={props.comics}/>
+            <p>{props.comic.safe_title}</p>
+            <img src={props.comic.img}/>
+            <Footer comic={props.comic}/>
             </div>
         </MyLayout>
   )
@@ -19,5 +19,5 @@ export async function getServerSideProps(){
     const response = await fetch('https://xkcd.com/2413/info.0.json');
     const jsonData  = await response.json();
     console.log(jsonData)
-    return {props: {comics: jsonData}}
+    return {props: {comic: jsonData}}
 }

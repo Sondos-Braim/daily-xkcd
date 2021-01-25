@@ -1,24 +1,31 @@
 import styles from '../styles.module.css'
 import Link from 'next/link'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function Footer(props){
     let comicsNums = [];
-    let nums = props.comics.num; 
-    for(let i = 0; i<10; i++){
-        comicsNums.push(nums-i)
+    let num = props.comic.num; 
+    for(let i = 1; i<=10; i++){
+        comicsNums.push(num-i)
     }
     return(
-        <footer className={styles.footer}>
-            <p>Previous 10</p>
-            <ul>
-                {comicsNums.map( (comic) =>
-                    <Link key={comic} href="/comics/[id].js" as={`/comics/${comic}` }>
-                        <a className={styles.a}>#{comic}</a>
+
+          <footer className={styles.footer}>  
+        <Navbar bg="dark" variant="dark">
+            <Nav className="mr-auto">
+
+                {comicsNums.map( (num) =>
+              
+                    <Link key={num} href="/comics/[num].js" as={`/comics/${num}` }>
+                    <a className={styles.a}>#{num}</a>
                     </Link>
+                   
                 )}
-            </ul>
-            <small>@copyright ASAC</small>
-        </footer>
-    )
-}
+  
+            </Nav>
+        </Navbar>
+        </footer> )}
+
 export default Footer;

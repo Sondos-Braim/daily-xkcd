@@ -1,10 +1,13 @@
 import MyLayout from '../../components/MyLayout'
+import Footer from '../../components/Footer'
 
 export default function UserDetails(props){
     return(
         <MyLayout>
             <h2>{props.comic.safe_title}</h2>
             <img src={props.comic.img}/>
+            <Footer comic={props.comic}/>
+
         </MyLayout>
     )
 }

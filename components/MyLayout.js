@@ -2,8 +2,10 @@ import Header from '../components/Header'
 
 
 export default props => (
+    <>
+    <Header />
     <div>
-        <Header />
+       
         {props.children}
         <style jsx>{`
             
@@ -14,4 +16,5 @@ export default props => (
 
         `}</style>
     </div>
+    </>
 )
